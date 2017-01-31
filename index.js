@@ -51,23 +51,14 @@ const grid = new Grid(CA_RESOLUTION, CANVAS_RESOLUTION)
 grid.initialize()
 
 
+const textarea = document.getElementById('textarea')
+let code = textarea.textContent
+let nextState = new Function("cell", code)
+console.log(nextState)
+
 setInterval(function() {
     draw(grid)
     grid.nextState(nextState)
 }, 1000)
 
-// here is the user-defined nextState function. For now we will do a simple cyclic CA.
-// TODO: allow user to enter in their own nextState function.
-function nextState(cell) {
-    const predicate = function(neighbor) {
-        if (cell.value === 11) {
-            return neighbor.value === 0
-        }
-        return neighbor.value === cell.value + 1
-    }
 
-    if (_.filter(cell.neighbors, predicate).length > 0) {
-        return cell.value === 11 ? 0 : cell.value + 1
-    }
-    return cell.value
-}
