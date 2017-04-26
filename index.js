@@ -51,14 +51,26 @@ const grid = new Grid(CA_RESOLUTION, CANVAS_RESOLUTION)
 grid.initialize()
 
 
-const textarea = document.getElementById('textarea')
-let code = textarea.textContent
-let nextState = new Function("cell", code)
-console.log(nextState)
+const code = document.getElementById('textarea').textContent
 
-setInterval(function() {
+let nextState = new Function("cell", code)
+
+document.getElementById('button').onclick = () => {
+    // reset the grid
+    grid.initialize()
+    // get the user defined function.
+    const code = document.getElementById('textarea').value
+    nextState = new Function("cell", code)
+
+    // reset the interval to call nextState with the new function.
+    clearInterval(interval)
+    interval = setInterval(function() {
+        draw(grid)
+        grid.nextState(nextState)
+    }, 1000)
+}
+
+let interval = setInterval(function() {
     draw(grid)
     grid.nextState(nextState)
 }, 1000)
-
-
