@@ -10,7 +10,8 @@ const ctx = canvas.getContext('2d')
 const width = canvas.width
 const height = canvas.height
 const CANVAS_RESOLUTION = width
-const CA_RESOLUTION = 10
+const CA_RESOLUTION = 100
+const INTERVAL = 200;
 
 function draw(grid) {
     //clear canvas
@@ -67,10 +68,10 @@ document.getElementById('button').onclick = () => {
     interval = setInterval(function() {
         draw(grid)
         grid.nextState(nextState)
-    }, 1000)
+    }, INTERVAL)
 }
 
 let interval = setInterval(function() {
     draw(grid)
     grid.nextState(nextState)
-}, 1000)
+}, INTERVAL)
