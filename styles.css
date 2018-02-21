@@ -1,0 +1,50 @@
+.content {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+}
+
+#canvas {
+  display: inline-block;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  /* border: 2px solid red; */
+  border-radius: 4px;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  /* font-family: 'VT323', monospace; */
+}
+
+textarea {
+    margin-left: 1em;
+    border: 2px solid red;
+    border-radius: 4px;
+    padding: 4px;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    background-color: rgb(20, 20, 20);
+    caret-color: red;
+    color: rgb(200,200,200);
+}
+
+#button {
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  background-color: black;
+  color: white;
+  border: 2px solid red;
+  border-radius: 4px;
+  margin-top: 1em;
+}
+
+#button:hover {
+    background-color: red; /* Green */
+    color: white;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  color: rgb(200,200,200);
+  min-height: 100vh;
+}
