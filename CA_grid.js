@@ -75,7 +75,7 @@ module.exports = class Grid {
         // TODO: let the user provide a way to initialize.
         _.each(this.grid, (cells, i) => {
             _.each(cells, (cell, j) => {
-                this.grid[i][j] = _.random(0, 11)
+                this.grid[i][j] = Boolean(_.random(0, 1))
             })
         })
    }

@@ -11,7 +11,7 @@ const width = canvas.width
 const height = canvas.height
 const CANVAS_RESOLUTION = width
 const CA_RESOLUTION = 100
-const INTERVAL = 200;
+const INTERVAL = 500;
 
 function draw(grid) {
     //clear canvas
@@ -31,21 +31,7 @@ function colorCell(x, y, color) {
 }
 
 function getCellColor(value) {
-    const map = {
-        0 : {r: 0, g: 0, b: 0},
-        1 : {r: 0, g: 0, b: 255},
-        2 : {r: 0, g: 255, b: 0},
-        3 : {r: 0, g: 255, b: 255},
-        4 : {r: 255, g: 0, b: 0},
-        5 : {r: 255, g: 0, b: 255},
-        6 : {r: 255, g: 255, b: 0},
-        7 : {r: 255, g: 255, b: 255},
-        8 : {r: 127, g: 127, b: 255},
-        9 : {r: 255, g: 255, b: 127},
-        10 : {r: 0, g: 127, b: 255},
-        11 : {r: 255, g: 127, b: 0},
-    }
-    return map[value]
+  return value ? {r: 255, g: 255, b: 255} : {r: 0, g: 0, b: 0}
 }
 
 const grid = new Grid(CA_RESOLUTION, CANVAS_RESOLUTION)
