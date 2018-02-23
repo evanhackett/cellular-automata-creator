@@ -6,5 +6,10 @@ Add an instructions page for users to learn how to use the site.
 
 refactor code?
 
-add ability for user to control the start setup.
-at least control the level of randomness.
+user controls for:
+  animation speed
+  start setup (at least the probability of a given boolean)
+  CA resolution, as in cell size on the canvas. CA_RESOLUTION value.
+
+add mode-switch to enable 1-dimensional mode or switch back to 2D mode.
+This would allow users to make 1D CA's, where each row depends on previous row.

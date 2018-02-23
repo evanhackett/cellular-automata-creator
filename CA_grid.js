@@ -56,7 +56,7 @@ module.exports = class Grid {
 
             return neighbors
         }
-    // map over each cell, passing the position, cell values (user defined), and neighbors of the cell to the callback fn.
+        // map over each cell, passing the position, cell values, and neighbors of the cell to the callback fn.
         // callback fn needs to return a cell value.
         this.grid = _.map(this.grid, (cells, i) => {
             return _.map(cells, (cell, j) => {
