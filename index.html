@@ -15,7 +15,9 @@
         <textarea id="textarea" rows="10" cols="50">
 const neighbors_alive = cell.neighbors.filter(neighbor => neighbor.value).length
 
-return neighbors_alive === 2 || neighbors_alive === 3
+const alive = cell.value
+
+return (!alive && neighbors_alive === 3) || (alive && (neighbors_alive === 2 || neighbors_alive === 3))
 </textarea>
 
         <button id="button">Restart</button>
