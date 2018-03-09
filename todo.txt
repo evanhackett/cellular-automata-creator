@@ -1,10 +1,6 @@
+modularize. see evernote note about pulling out modules.
+
 add examples tab to autopopulate the textarea with working CA's.
-
-deploy to gh-pages.
-
-Add an instructions page for users to learn how to use the site.
-
-refactor code?
 
 user controls for:
   animation speed
