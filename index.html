@@ -20,8 +20,60 @@ const alive = cell.value
 return (!alive && neighbors_alive === 3) || (alive && (neighbors_alive === 2 || neighbors_alive === 3))
 </textarea>
 
-        <button id="button">Restart</button>
+        <div id="readme" style="display:none;">
+            <h2>README</h2> 
+            <p>Hello! To create your own cellular automata, you must provide the code for a function that acts on each cell. The language must be javascript.</p>
+            <p>The function will be called on each cell to get the value of the cells new state. Whatever you return will determine the new value of the cell.</p>
+            <p>All you have to do is return a boolean (true or false) value. This value determines whether the cell will be colored black (false) or white (true).</p>
+            <p>Since this is a cellular automata, each cells new value depends on its previous value, as well the value of its neighbors. For this reason, 2 values are exposed to you:</p>
+            <p>cell and cell.neighbors</p>
+            <p>cell is a boolean representing the value of the current cell.</p>
+            <p>cell.neighbors is an array of booleans representing the values of cell's neighbors. Since each cell has 8 neighbors, the array indices are laid out like this: 0,1,2 are top-left, top-middle, and top-right respectively. 3,4 are middle-left and middle-right. There is no middle-middle in the neighbors array, because middle-middle would be the current cell! 5,6,7 are bottom-left, bottom-middle, and bottom-right. Visually, it would look like this:</p>
+            <table>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr> 
+                <tr>
+                    <td>3</td>
+                    <td>cell</td>
+                    <td>4</td>
+                </tr> 
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr> 
+            </table>
 
+            <p>In summary, to access the cells top-left neighbor, you would write cell.neighbors[0]. To refer to the cells bottom-middle neighbor, you would write cell.neighbors[6]. Remember, to refer to the cell itself, just write 'cell'.</p>
+
+            <h3>Example: Conway's Game of Life</h3>
+            <p>You may have recognized the default animation as Conway's game of life. How does this work? The rules for this particular automata are as follows:</p>
+            <ul>
+                <li>Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</li>
+                <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+                <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+            </ul>
+
+            <p>Notice how each rule simply refers to the number of alive neighbors. Thus, the first thing we do is grab a count of our alive neighbors. We will decide that alive is represented by the value true, and dead as the value false.</p>
+            <p>const neighbors_alive = cell.neighbors.filter(neighbor => neighbor.value).length</p>
+            <p>We filtered out all the falses from the neighbors array, and then grabbed the length property. Now we can do comparisons like neighbors_alive === 3 and such.</p>
+            <p>Now that we have the number of alive neighbors, we can implement the rules for Conway's GoL with a logical expression:</p>
+            <p>const alive = cell.value</p>
+            <p>return (!alive && neighbors_alive === 3) || (alive && (neighbors_alive === 2 || neighbors_alive === 3))</p>
+
+            <p>Have fun creating your own cellular automata! Click the Show/Hide button below to get back to the code editor.</p>
+
+        </div>
+
+
+        <button class="button" id="restart-button">Restart</button>
+
+        <button class="button" id="readme-button">Show/Hide Instructions</button>
+    
       </div>
 
         <script src="bundle.js"></script>

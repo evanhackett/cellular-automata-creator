@@ -15,18 +15,33 @@ h1 {
   font-family: 'Press Start 2P', cursive;
 }
 
-textarea {
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    table-layout: fixed;
+    width: 125px;
+    height: 125px;
+    text-align: center;
+}
+
+table, td {
+    border: 1px solid rgb(200,200,200);
+}
+
+textarea, #readme {
   border: 2px solid red;
   border-radius: 4px;
-  padding: 4px;
+  padding: 4px 4px 4px 8px;
   font-family: 'VT323', monospace;
   font-size: 24px;
   background-color: rgb(20, 20, 20);
   caret-color: red;
   color: rgb(200,200,200);
+  height: 488px; /* canvas height - border*2 - padding*2 */
+  overflow-y: auto;
 }
 
-#button {
+.button {
   font-size: 24px;
   font-family: 'VT323', monospace;
   background-color: black;
@@ -35,9 +50,10 @@ textarea {
   border-radius: 4px;
 }
 
-#button:hover {
+.button:hover {
     background-color: red;
     color: white;
+    cursor: pointer;
 }
 
 body {
@@ -45,3 +61,4 @@ body {
   color: rgb(200,200,200);
   min-height: 100vh;
 }
+

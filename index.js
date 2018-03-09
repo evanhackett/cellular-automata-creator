@@ -42,7 +42,7 @@ const code = document.getElementById('textarea').textContent
 
 let nextState = new Function("cell", code)
 
-document.getElementById('button').onclick = () => {
+document.getElementById('restart-button').onclick = () => {
     // reset the grid
     grid.initialize()
     // get the user defined function.
@@ -61,3 +61,17 @@ let interval = setInterval(function() {
     draw(grid)
     grid.nextState(nextState)
 }, INTERVAL)
+
+
+document.getElementById('readme-button').onclick = () => {
+    const readme = document.getElementById('readme')
+    const textarea = document.getElementById('textarea')
+
+    if (readme.style.display === 'none') {
+        textarea.style.display = 'none'
+        readme.style.display = 'block'
+    } else {
+        textarea.style.display = 'block'
+        readme.style.display = 'none'
+    }
+}
