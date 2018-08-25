@@ -26,8 +26,8 @@ return (!alive && neighbors_alive === 3) || (alive && (neighbors_alive === 2 || 
             <p>The function will be called on each cell to get the value of the cells new state. Whatever you return will determine the new value of the cell.</p>
             <p>All you have to do is return a boolean (true or false) value. This value determines whether the cell will be colored black (false) or white (true).</p>
             <p>Since this is a cellular automata, each cells new value depends on its previous value, as well the value of its neighbors. For this reason, 2 values are exposed to you:</p>
-            <p>cell and cell.neighbors</p>
-            <p>cell is a boolean representing the value of the current cell.</p>
+            <p>cell.value and cell.neighbors</p>
+            <p>cell.value is a boolean representing the value of the current cell.</p>
             <p>cell.neighbors is an array of booleans representing the values of cell's neighbors. Since each cell has 8 neighbors, the array indices are laid out like this: 0,1,2 are top-left, top-middle, and top-right respectively. 3,4 are middle-left and middle-right. There is no middle-middle in the neighbors array, because middle-middle would be the current cell! 5,6,7 are bottom-left, bottom-middle, and bottom-right. Visually, it would look like this:</p>
             <table>
                 <tr>
