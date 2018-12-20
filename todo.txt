@@ -1,3 +1,5 @@
+optimize for mobile.
+
 modularize. see evernote note about pulling out modules.
 
 add examples tab to autopopulate the textarea with working CA's.
