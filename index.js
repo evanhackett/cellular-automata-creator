@@ -11,11 +11,13 @@ reset()
 
 function reset() {
     grid = Array(CA_RESOLUTION).fill(0).map(x => Array(CA_RESOLUTION).fill(0).map(x => Math.random() >= 0.5)) // make a 2d array of random booleans
+    
     rulesFunction = new Function("cell", document.getElementById('textarea').value) // grab the user-entered rules
+    
     clearInterval(interval)
     interval = setInterval(function() {
-	drawGrid(canvas, grid, alive => alive ? {r: 255, g: 255, b: 255} : {r: 0, g: 0, b: 0})
-	grid = CA(rulesFunction, grid)
+        drawGrid(canvas, grid, alive => alive ? {r: 255, g: 255, b: 255} : {r: 0, g: 0, b: 0})
+        grid = CA(rulesFunction, grid)
     }, INTERVAL)
 }
 

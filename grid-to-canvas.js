@@ -1,4 +1,4 @@
-// canvas is dom node of canvas to draw to
+// canvas is the dom node of the canvas to draw to
 // grid is the 2d array of data to draw
 // colorFn defines how to color a cell based on the cell's data
 module.exports = function(canvas, grid, colorFn) {
@@ -15,7 +15,6 @@ module.exports = function(canvas, grid, colorFn) {
     row.forEach((cell, j) => {
       colorCell(i, j, colorFn(cell))
     })
-  })
-  
+  })  
 }
 
